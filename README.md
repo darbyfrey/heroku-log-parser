@@ -1,7 +1,7 @@
 heroku-log-parser
 =================
 
-This is a port of [https://github.com/rwdaigle/heroku-log-parser]() to ES6. The interface is slightly different but the logic is essentially the same.
+This is a port of [https://github.com/rwdaigle/heroku-log-parser]() to Javascript ES6 for Node.js. The interface is slightly different but the logic is essentially the same.
 
 
 ## Usage
