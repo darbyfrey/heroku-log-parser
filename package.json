@@ -1,0 +1,23 @@
+{
+  "name": "heroku-log-parser",
+  "version": "1.0.0",
+  "description": "A log parser for Heroku's http log drains",
+  "main": "heroku-log-parser.js",
+  "scripts": {
+    "test": "mocha tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darbyfrey/heroku-log-parser.git"
+  },
+  "author": "Darby Frey <darbyfrey@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/darbyfrey/heroku-log-parser/issues"
+  },
+  "homepage": "https://github.com/darbyfrey/heroku-log-parser#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.1.2"
+  }
+}
