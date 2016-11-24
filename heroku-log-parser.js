@@ -14,7 +14,7 @@ module.exports = class HerokuLogParser {
   }
 
   static _split_lines(data){
-    return data.split('\n').map(s => s.trim())
+    return data.split('\n').map(s => s.trim()).filter(Boolean)
   }
 
   static _counting_frame(line){
