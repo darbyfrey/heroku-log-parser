@@ -1,6 +1,6 @@
 {
   "name": "heroku-log-parser",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A log parser for Heroku's http log drains",
   "main": "heroku-log-parser.js",
   "scripts": {
