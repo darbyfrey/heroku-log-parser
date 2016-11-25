@@ -7,7 +7,10 @@ module.exports = class HerokuLogParser {
     let lines = HerokuLogParser._split_lines(data)
 
     lines.forEach(function(line){
-      events.push(HerokuLogParser._extract_event_data(line))
+      let event_data = HerokuLogParser._extract_event_data(line)
+      if(event_data !== null){
+        events.push(event_data)
+      }
     })
 
     return events
@@ -39,18 +42,22 @@ module.exports = class HerokuLogParser {
     let extracted_data = regex.exec(HerokuLogParser._parse_line(line))
     let event = {}
 
-    event.priority = Number.parseInt(extracted_data[1])
-    event.syslog_version = Number.parseInt(extracted_data[2])
-    event.emitted_at = extracted_data[3]
-    event.hostname = extracted_data[4]
-    event.appname = extracted_data[5]
-    event.proc_id = extracted_data[6]
-    event.msg_id = null
-    event.structured_data = null
-    event.message = extracted_data[8]
-    event.original = extracted_data[0]
+    if(extracted_data === null){
+      return null
+    } else {
+      event.priority = Number.parseInt(extracted_data[1])
+      event.syslog_version = Number.parseInt(extracted_data[2])
+      event.emitted_at = extracted_data[3]
+      event.hostname = extracted_data[4]
+      event.appname = extracted_data[5]
+      event.proc_id = extracted_data[6]
+      event.msg_id = null
+      event.structured_data = null
+      event.message = extracted_data[8]
+      event.original = extracted_data[0]
 
-    return event
+      return event
+    }
   }
 
 }
